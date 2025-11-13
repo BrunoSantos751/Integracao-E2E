@@ -157,4 +157,4 @@ npx cypress open
 
 **Resultados Esperados:** O Cypress abrirá uma janela do navegador e executará os testes. Você verá o robô visitar `http://localhost:5173`, preencher os formulários, criar usuários, buscar pelo ID e validar que a interface se atualizou corretamente.
 
-Ambos os testes (`it '...'`) devem ficar verdes, indicando sucesso na integração total.
+Ambos os testes  devem ficar verdes, indicando sucesso na integração total.
