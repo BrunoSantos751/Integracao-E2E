@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import axios from 'axios'; 
 import "./TesteFront.css";
 
-// Interface atualizada para bater com a API (name ao invés de nome)
 interface User {
   id: number;
   name: string; 
   email: string;
 }
 
-// NOVO: Define a URL base da nossa API
 const API_URL = 'http://localhost:3000';
 
 export function TesteFront() {
@@ -35,8 +33,6 @@ export function TesteFront() {
 
   // Filtra por ID ou Email (agora buscando do estado 'users' que veio da API)
   const handleSearch = () => {
-    // Esta lógica de busca ainda é no frontend, o que é aceitável.
-    // Uma versão avançada faria a busca no backend (ex: GET /users?q=...)
     if (!search.trim()) {
       fetchUsers(); // Recarrega todos se a busca estiver vazia
       return;
@@ -45,8 +41,7 @@ export function TesteFront() {
     const lowerSearch = search.toLowerCase();
     const filtered = users.filter(
       (u) =>
-        u.id.toString() === lowerSearch ||
-        u.email.toLowerCase().includes(lowerSearch)
+        u.id.toString() === lowerSearch 
     );
     setUsers(filtered);
   };
@@ -77,7 +72,7 @@ export function TesteFront() {
       <div className="search">
         <input
           type="text"
-          placeholder="Buscar por ID ou e-mail..."
+          placeholder="Buscar por ID "
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
